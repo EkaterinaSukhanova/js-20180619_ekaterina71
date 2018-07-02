@@ -5,5 +5,9 @@
  * @returns {number}
  */
 function pow (m, n) {
-
+    var result = 1;
+    for(var i = 0; i < n; i++){
+        result *= m;
+    }
+    return +result;
 }
