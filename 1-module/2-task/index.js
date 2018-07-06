@@ -13,12 +13,12 @@ function print (text) {
  */
 /** *имя не пустое, без пробелов, минимум 4 символа* **/
 function isValid (name) {
-    if(name !== null) {
-        if ((name !== "") && (name.length >= 4) && (+(~name.indexOf(' ')) === 0)) {
-            return true;
-        }
+    if (name === null || name === undefined) {
+        return false;
     }
-    return false;
+
+    return (name !== "") && (name.length >= 4) && (+(~name.indexOf(' ')) === 0);
+
 }
 
 function sayHello () {
