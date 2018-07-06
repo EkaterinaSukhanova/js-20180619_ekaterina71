@@ -11,7 +11,14 @@ function print (text) {
  * Эту функцию нужно поменять так,
  * чтобы функция sayHello работала корректно
  */
+/** *имя не пустое, без пробелов, минимум 4 символа* **/
 function isValid (name) {
+    if(name !== null) {
+        if ((name !== "") && (name.length >= 4) && (+(~name.indexOf(' ')) === 0)) {
+            return true;
+        }
+    }
+    return false;
 }
 
 function sayHello () {
