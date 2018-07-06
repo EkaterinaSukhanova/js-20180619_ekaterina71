@@ -7,9 +7,10 @@
  */
 function getMinMax(str) {
     let num = '';
+    let valueSet = false;
     let result = {
-        max: -10000000,
-        min: 10000000
+        min: 0,
+        max: 0
     };
     let index = 0;
     for (let char of str) {
@@ -20,12 +21,20 @@ function getMinMax(str) {
                 if (+num < result.min) result.min = +num;
             }
         } else {
+            if (valueSet === false){
+                result.max = num;
+                result.min = num;
+                valueSet = true;
+            }
             if (+num > result.max) result.max = +num;
             if (+num < result.min) result.min = +num;
             num = '';
         }
         index ++;
     }
+    result.max = +result.max;
+    result.min = +result.min;
+
     return result;
 }
 
